@@ -98,3 +98,11 @@ class Coches:
             return True
         except:
             return False
+        
+    @staticmethod  
+    def buscar(id):
+        try:
+            cursor.execute("select * from coches where id=%s",(id,))
+            return cursor.fetchall()
+        except:
+            return []
